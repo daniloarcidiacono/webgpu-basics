@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>WebGPU Basics</title>
+  </head>
+  <body>
+    <header class="prose">
+      <h1>Shaders</h1>
+      <p>
+        Learn more about WebGPU fundamentals in the detailed tutorial on
+        <a href="https://danilosdev.blog/it/blog/webgpu-basics/02-shaders" target="_blank">
+          Danilo's DevBlog.
+        </a>
+      </p>
+    </header>
+    <main>
+      <section class="webgpu-unavailable prose">
+        <p class="error">WebGPU is not supported in your browser.</p>
+      </section>
+
+      <section class="main-content webgpu-available">
+        <section class="canvas">
+          <canvas id="mainCanvas" class="webgpu-canvas"></canvas>
+        </section>
+
+        <aside class="aside">
+          <details open>
+            <summary>Shader</summary>
+            <pre id="shader"></pre>
+          </details>
+          <details>
+            <summary>Adapter info</summary>
+            <pre id="adapterInfo"></pre>
+          </details>
+          <details>
+            <summary>Adapter limits</summary>
+            <pre id="adapterLimits"></pre>
+          </details>
+          <details>
+            <summary>Adapter features</summary>
+            <pre id="adapterFeatures"></pre>
+          </details>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
