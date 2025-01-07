@@ -1,0 +1,81 @@
+@layer reset, typography, layout, components, utils, theme;
+
+@layer layout {
+  :root {
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    --canvas-min-width: 128px;
+    --canvas-max-width: 512px;
+  }
+
+  main {
+    margin-block-start: var(--spacing-lg);
+  }
+
+  .main-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+
+    .canvas {
+      width: clamp(var(--canvas-min-width), 100%, var(--canvas-max-width));
+      display: flex;
+      flex-flow: column nowrap;
+      gap: var(--spacing-lg);
+    }
+  }
+
+  .sliders-container {
+    display: grid;
+    grid-template-columns: auto 1fr 3ch;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .webgpu-canvas {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}
+
+@layer components {
+  details > summary {
+    cursor: pointer;
+  }
+}
+
+@layer utils {
+  :root {
+    &[data-webgpu="no"] {
+      .webgpu-available {
+        display: none;
+      }
+    }
+
+    &[data-webgpu="yes"] {
+      .webgpu-unavailable {
+        display: none;
+      }
+    }
+
+    &:not([data-webgpu]) {
+      .webgpu-available, .webgpu-unavailable {
+        display: none;
+      }
+    }
+  }
+}
+
+@layer theme {
+  .error {
+    color: var(--color-text--emphasized);
+  }
+
+  canvas {
+    border: 1px solid var(--color-border);
+  }
+}

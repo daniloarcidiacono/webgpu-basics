@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>WebGPU Basics</title>
+  </head>
+  <body>
+    <header class="prose">
+      <h1>Hello, WebGPU!</h1>
+      <p>
+        Use the RGB sliders below to change the background color in real-time.
+        Learn more about WebGPU fundamentals in the detailed tutorial on
+        <a href="https://danilosdev.blog/it/blog/webgpu-basics/01-basics" target="_blank">
+          Danilo's DevBlog.
+        </a>
+      </p>
+    </header>
+    <main>
+      <section class="webgpu-unavailable prose">
+        <p class="error">WebGPU is not supported in your browser.</p>
+      </section>
+
+      <section class="main-content webgpu-available">
+        <section class="canvas">
+          <section class="sliders-container">
+            <label for="redSlider">R</label>
+            <input type="range" id="redSlider" min="0" max="255" value="234">
+            <output id="redValue" for="redSlider">234</output>
+
+            <label for="greenSlider">G</label>
+            <input type="range" id="greenSlider" min="0" max="255" value="88">
+            <output id="greenValue" for="greenSlider">88</output>
+
+            <label for="blueSlider">B</label>
+            <input type="range" id="blueSlider" min="0" max="255" value="12">
+            <output id="blueValue" for="blueSlider">12</output>
+          </section>
+
+          <canvas id="mainCanvas" class="webgpu-canvas"></canvas>
+        </section>
+
+        <aside class="aside">
+          <details open>
+            <summary>Adapter info</summary>
+            <pre id="adapterInfo"></pre>
+          </details>
+          <details>
+            <summary>Adapter limits</summary>
+            <pre id="adapterLimits"></pre>
+          </details>
+          <details>
+            <summary>Adapter features</summary>
+            <pre id="adapterFeatures"></pre>
+          </details>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
