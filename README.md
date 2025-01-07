@@ -1,8 +1,8 @@
 # WebGPU Basics: Shaders
 This branch showcases a triangle with interpolated vertex colors using inter-stage variables.
 
-![screenshot_dark](https://github.com/user-attachments/assets/0eeabf48-9098-416a-b996-a83a2db561e9#gh-dark-mode-only)
-![screenshot_light](https://github.com/user-attachments/assets/8d7ee292-0112-4733-8322-6b7e4aa00f1b#gh-light-mode-only)
+![screenshot_dark](https://github.com/user-attachments/assets/1be18111-dae2-4557-8b8a-acc0c55cf2fe#gh-dark-mode-only)
+![screenshot_light](https://github.com/user-attachments/assets/0bab0475-f5fd-4f33-a148-9d9d3283cf8a#gh-light-mode-only)
 
 For a detailed explanation of the implementation, check out the blog post: [WebGPU Basics: Shaders](https://danilosdev.blog/it/blog/webgpu-basics/02-shaders).
 
