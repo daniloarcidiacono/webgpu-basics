@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.1.1",
-    "@vitejs/plugin-basic-ssl": "^1.2.0"
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "shiki": "^1.26.1"
   }
 }
