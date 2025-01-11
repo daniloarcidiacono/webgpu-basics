@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>WebGPU Basics</title>
+  </head>
+  <body>
+    <header class="prose">
+      <h1>Matrices</h1>
+      <p>
+        The vertex shader transforms the star vertices through the following sequence of operations: scaling, rotation, and translation.
+        Scale and rotation are applied via 2x2 transformation matrices:
+      </p>
+      <span class="katex">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <semantics>
+            <mrow>
+              <mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo>
+              <mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>45</mn><mi mathvariant="normal">°</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>45</mn><mi mathvariant="normal">°</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>45</mn><mi mathvariant="normal">°</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>45</mn><mi mathvariant="normal">°</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow>
+              <mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.5</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.5</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>x</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>y</mi></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>+</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.2</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>0.1</mn></mrow></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow>
+            </mrow>
+            <annotation encoding="application/x-tex">f(x, y) =
+              \begin{bmatrix}
+              \cos(45\degree) &amp; -\sin(45\degree) \\
+              \sin(45\degree) &amp; \cos(45\degree)
+              \end{bmatrix}
+
+              \begin{bmatrix}
+              0.5 &amp; 0 \\
+              0 &amp; 0.5
+              \end{bmatrix}
+
+              \begin{bmatrix}
+              x \\
+              y
+              \end{bmatrix}
+
+              +
+
+              \begin{bmatrix}
+              0.2 \\
+              -0.1
+              \end{bmatrix}</annotation>
+          </semantics>
+        </math>
+      </span>
+      <p>
+        Learn more about WebGPU fundamentals in the detailed tutorial on
+        <a href="https://danilosdev.blog/it/blog/webgpu-basics/04-matrix" target="_blank">
+          Danilo's DevBlog.
+        </a>
+      </p>
+    </header>
+    <main>
+      <section class="webgpu-unavailable prose">
+        <p class="error">WebGPU is not supported in your browser.</p>
+      </section>
+
+      <section class="main-content webgpu-available">
+        <section class="canvas">
+          <canvas id="mainCanvas" class="webgpu-canvas"></canvas>
+        </section>
+        <aside class="aside">
+          <details open>
+            <summary>Shader</summary>
+            <pre id="shader"></pre>
+          </details>
+          <details>
+            <summary>Adapter info</summary>
+            <pre id="adapterInfo"></pre>
+          </details>
+          <details>
+            <summary>Adapter limits</summary>
+            <pre id="adapterLimits"></pre>
+          </details>
+          <details>
+            <summary>Adapter features</summary>
+            <pre id="adapterFeatures"></pre>
+          </details>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

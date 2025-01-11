@@ -1,0 +1,37 @@
+{
+  "name": "webgpu-basics",
+  "version": "0.1.0",
+  "description": "WebGPU Basics",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniloarcidiacono/webgpu-basics.git"
+  },
+  "keywords": [
+    "webgpu",
+    "basics"
+  ],
+  "author": "Danilo Arcidiacono <danilo.arcidiacono@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniloarcidiacono/webgpu-basics/issues"
+  },
+  "homepage": "https://github.com/daniloarcidiacono/webgpu-basics",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.52",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.3",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter-tight": "^5.1.1",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "dedent": "^1.5.3",
+    "shiki": "^1.26.1"
+  }
+}
