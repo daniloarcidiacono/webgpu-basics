@@ -31,6 +31,7 @@
   "dependencies": {
     "@fontsource-variable/inter-tight": "^5.1.1",
     "@vitejs/plugin-basic-ssl": "^1.2.0",
-    "dedent": "^1.5.3"
+    "dedent": "^1.5.3",
+    "shiki": "^1.26.1"
   }
 }
